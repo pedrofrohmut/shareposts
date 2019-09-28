@@ -1,14 +1,22 @@
 import React from 'react';
-import { Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Counter from './components/Counter';
-import FetchData from './components/FetchData';
+import { Switch, Route } from "react-router-dom"
 
-export default () => (
-  <Layout>
-    <Route exact path='/' component={Home} />
-    <Route path='/counter' component={Counter} />
-    <Route path='/fetch-data/:startDateIndex?' component={FetchData} />
-  </Layout>
-);
+import HomePage from "./pages/HomePage"
+import SignInPage from "./pages/SignInPage"
+import SignUpPage from "./pages/SignUpPage"
+import PostsPage from "./pages/PostsPage"
+import PostDetailsPage from "./pages/PostDetailsPage"
+
+const App = () => (
+  <React.Fragment>
+    <Switch>
+      <Route path="/" exact component={HomePage} />
+      <Route path="/signin" exact component={SignInPage} />
+      <Route path="/signup" exact component={SignUpPage} />
+      <Route path="/posts" exact component={PostsPage} />
+      <Route path="/post/details/:postId" exact component={PostDetailsPage} />
+    </Switch>
+  </React.Fragment>
+)
+
+export default App
