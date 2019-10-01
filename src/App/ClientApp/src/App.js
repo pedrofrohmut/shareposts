@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom"
 
+import Navbar from "./components/navigation/Navbar"
 import HomePage from "./pages/HomePage"
 import SignInPage from "./pages/SignInPage"
 import SignUpPage from "./pages/SignUpPage"
@@ -9,6 +10,7 @@ import PostDetailsPage from "./pages/PostDetailsPage"
 
 const App = () => (
   <React.Fragment>
+    <Navbar />
     <Switch>
       <Route path="/" exact component={HomePage} />
       <Route path="/signin" exact component={SignInPage} />

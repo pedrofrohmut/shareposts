@@ -1,12 +1,14 @@
 import React from "react"
 
+import { Container } from  "reactstrap"
+
 const PostDetailPage = ({ match }) => {
   const { postId } = match.params
   return (
-    <React.Fragment>
+    <Container>
       <h1>Post Details</h1>
       <p>Post id = {postId}</p>
-    </React.Fragment>
+    </Container>
   )
 }
 

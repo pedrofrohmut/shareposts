@@ -1,8 +1,12 @@
 import React from "react"
 
+import { Container } from "reactstrap"
+
 const SignUpPage = () => {
   return (
-    <h1>Sign Up Page</h1>
+    <Container>
+      <h1>Sign Up Page</h1>
+    </Container>
   )
 }
 
