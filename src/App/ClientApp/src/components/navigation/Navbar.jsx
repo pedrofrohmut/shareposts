@@ -10,7 +10,7 @@ const Navbar = () => {
       <Container>
         <NavLink to="/" className="navbar-brand mr-4">Share Posts</NavLink>
         <NavbarToggler onClick={() => setOpen(!isOpen)} className="mr-2" />
-        <Collapse isOpen={isOpen} navbar>
+        <Collapse isOpen={isOpen} onClick={() => setOpen(false)} navbar>
           <Nav className="mr-auto" navbar>
             <NavItem>
               <NavLink className="nav-link" activeClassName="active" exact to="/">Home</NavLink>
