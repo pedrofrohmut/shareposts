@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useContext } from "react"
 import PropTypes from "prop-types"
 
+import AuthContext from "../context/AuthContext"
 import SignUpForm from "../components/forms/SignUpForm"
 
 import {
@@ -14,7 +15,11 @@ import {
 } from "reactstrap"
 
 const SignUpPage = ({ history }) => {
-  const handleSubmit = () => history.push("/")
+  const { signUp } = useContext(AuthContext)
+  const handleSubmit = formData => {
+    signUp(formData)
+    history.push("/")
+  }
   return (
     <Container className="SignUpPage">
       <Row>

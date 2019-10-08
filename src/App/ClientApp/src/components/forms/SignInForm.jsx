@@ -53,31 +53,6 @@ const SignInForm = ({ onSubmit }) => {
     validateUserSignIn,
     onSubmit
   )
-  // const [values, setValues] = useState(INITIAL_FORM_DATA)
-  // const [errors, setErrors] = useState(INITIAL_FORM_ERRORS)
-  // const [isTouched, setTouched] = useState(false)
-  // const handleChange = e => {
-  //   setValues({ ...values, [e.target.name]: e.target.value })
-  //   setTouched(true)
-  // }
-  // const validateForm = () => {
-  //   console.log("VALUES BEFORE VALIDATE", values)
-  //   const formErrors = validateUserSignIn(values)
-  //   console.log("FORM ERRORS AFTER VALIDATE", formErrors)
-  //   setErrors(formErrors)
-  // }
-  // const handleSubmit = e => {
-  //   e.preventDefault()
-  //   validateForm()
-  //   console.log("ERRORS", errors, "VALUES", values)
-  //   if (isTouched && Object.values(errors).every(err => err === "")) {
-  //     console.log("NO ERRORS")
-  //     return onSubmit(values)
-  //   } else {
-  //     console.log("ERRORS FOUND")
-  //     return undefined
-  //   }
-  // }
   return (
     <Form className="py-4 px-2" onSubmit={handleSubmit} method="POST">
       <pre>{JSON.stringify(values, null, 4)}</pre>
