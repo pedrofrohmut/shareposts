@@ -1,13 +1,45 @@
 import React from "react"
+import PropTypes from "prop-types"
 
-import { Container } from "reactstrap"
+import SignInForm from "../components/forms/SignInForm"
 
-const SignInPage = () => {
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardSubtitle,
+  Col,
+  Container,
+  Row
+} from "reactstrap"
+
+const SignInPage = ({ history }) => {
+  const handleSubmit = () => history.push("/")
   return (
     <Container>
-      <h1>Sign In Page</h1>
+      <Row>
+        <Col className="mt-3 mx-auto" md="10">
+          <Card color="light" className="px-4">
+            <CardBody>
+              <CardTitle tag="h1" className="mb-4">
+                Sign In | User Authentication
+              </CardTitle>
+              <CardSubtitle className="mb-4">
+                Please inform your credentials to sign in
+              </CardSubtitle>
+              <SignInForm onSubmit={handleSubmit} />
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
     </Container>
   )
+}
+
+SignInPage.propTypes = {
+  history: PropTypes.shape({
+    push: PropTypes.func.isRequired
+  }).isRequired
 }
 
 export default SignInPage

@@ -21,10 +21,12 @@
     "semi": ["error", "never"],
     "quotes": ["error", "double", { "avoidEscape": true }],
     "comma-dangle": "off",
-    "max-len": ["error", 80, 2],
+    "max-len": ["warn", 80, 2],
     "func-names": "off",
+    "arrow-parens": "off",
     "implicit-arrow-linebreak": "off",
     "no-else-return": "off",
+    "no-nested-ternary": "off",
     "react/jsx-filename-extension": [
       "error",
       {
@@ -40,6 +42,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/destructuring-assignment": "off",
-    "react/no-unescaped-entities": "off"
+    "react/no-unescaped-entities": "off",
+    "react/jsx-fragments": "off"
   }
 }
