@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SharePosts.Authorization;
 using SharePosts.DataBase.Context;
 using SharePosts.DataBase.Entities;
 
@@ -27,12 +28,24 @@ namespace App
       });
       // DbContext
       services.AddEntityFrameworkNpgsql()
-        .AddDbContext<SharePostsDbContext>(options => 
+        .AddDbContext<SharePostsDbContext>(options =>
             options.UseNpgsql(Configuration["ConnectionStrings:PostgreSQL:SharePostsDb"]));
       // Identity Services
       services.AddDefaultIdentity<ApplicationUser>()
         .AddRoles<IdentityRole>()
         .AddEntityFrameworkStores<SharePostsDbContext>();
+      // ApplicationUser Password Options
+      services
+        .Configure<IdentityOptions>(options =>
+        {
+          options.Password.RequireDigit = false;
+          options.Password.RequireNonAlphanumeric = false;
+          options.Password.RequireUppercase = false;
+          options.Password.RequireLowercase = false;
+          options.Password.RequiredLength = 3;
+        });
+      // Token Generator
+      services.AddScoped<TokenGenerator>();
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)

@@ -16,7 +16,7 @@ import {
   Row
 } from "reactstrap"
 
-const validateUserSignUp = (formData) => ({
+const validateUserSignUp = formData => ({
   username:
     formData.username === ""
       ? "Username cannot be blank"

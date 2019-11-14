@@ -65,7 +65,7 @@ namespace SharePosts.App.Controllers
     /*
      * Post (Guest) api/v1/application_users/signin
      */
-    [HttpPost]
+    [HttpPost("signin")]
     public async Task<ActionResult> SignIn([FromBody] SignInRequestBody requestBody)
     {
       if (!ModelState.IsValid)
