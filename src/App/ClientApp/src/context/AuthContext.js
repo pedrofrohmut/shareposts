@@ -40,7 +40,10 @@ export const AuthProvider = props => {
     })
   }
   const signOut = () => console.log("USER SIGN OUT CONTEXT")
-  const signUp = () => console.log("USER SIGN UP CONTEXT")
+  const signUp = ({ username, email, password }) => {
+    console.log("USER SIGN UP CONTEXT")
+    api.users.signUp({ username, email, password })
+  }
   return (
     <AuthContext.Provider
       value={{

@@ -8,6 +8,14 @@ export default {
           email,
           password
         })
+        .then(response => response.data),
+    signUp: ({ username, email, password }) =>
+      axios
+        .post("https://localhost:5001/api/v1/application_users", {
+          username,
+          email,
+          password
+        })
         .then(response => response.data)
   }
 }

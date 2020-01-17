@@ -44,7 +44,6 @@ const INITIAL_FORM_ERRORS = {
 }
 
 const SignInForm = ({ onSubmit }) => {
-  // const { signIn }  = useContext(AuthContext)
   const {
     values, errors, handleChange, handleSubmit, validateForm
   } = useForm(
@@ -55,14 +54,16 @@ const SignInForm = ({ onSubmit }) => {
   )
   return (
     <Form className="py-4 px-2" onSubmit={handleSubmit} method="POST">
+      {/*
       <pre>{JSON.stringify(values, null, 4)}</pre>
       <pre>{JSON.stringify(errors, null, 4)}</pre>
       <pre>{JSON.stringify(Object.values(errors), null, 4)}</pre>
       <div>
         {`HAS ERRORS: ${
-          Object.values(errors).every(error => error === "") ? "True" : "False"
+          !Object.values(errors).every(error => error === "") ? "True" : "False"
         }`}
       </div>
+      */}
       <FormGroup className="mb-4">
         <Input
           type="text"

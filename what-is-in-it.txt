@@ -1,0 +1,31 @@
+SERVER
+
+1 - DataSeed
+2 - Sign Up / Sign In / Sign Out API
+3 - E-mail Confirmation
+  3.1 - Confirm e-mail Token
+4 - Change Password by e-mail
+  4.1 - Change Password Token
+5 - Authentication Token: 
+  5.1 - Generate
+  5.2 - Authenticate
+  5.3 - Refresh
+6 - Mailer Service For Reset Password & Confirm E-mail
+7 - Authentication Token in the Request Header
+
+CLIENT
+
+1 - Api Call to the server: signIn, signUp, confirmEmail, resetPasswordRequest, resetPassword, validateAuthenticationToken, fetchCurrentUser
+2 - Global State for Authenticated User (ReduxStore or ReactContext)
+  2.1 - Action / Reducers / Thunks / Selectors
+  2.2 - Different state in the pages when the Authenticated User is true or false
+3 - Set Request Headers With Authenticated User
+4 - Page Routing at Home Page (ReactRouterDom)
+  4.1 - Different routes for this Router (Authorization)
+  4.2 - Page Components For The Routes
+5 - Multiple Pages for the web site: SignIn / SignUp / Home / ResetPassword / ForgotPassword / Dashboard / etc...
+6 - Components
+  6.1 - Forms
+  6.2 - Messages
+  6.3 - Navigation
+  6.4 - Routes

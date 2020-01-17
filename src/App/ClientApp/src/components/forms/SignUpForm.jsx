@@ -62,7 +62,6 @@ const INITIAL_FORM_ERRORS = {
 }
 
 const SignUpForm = ({ onSubmit }) => {
-  // const { signUp } = useContext(AuthContext)
   const {
     values, errors, handleChange, handleSubmit, validateForm
   } = useForm(
